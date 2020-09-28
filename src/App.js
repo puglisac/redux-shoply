@@ -12,18 +12,18 @@ function App() {
 
 	useEffect(
 		() => {
-			if (Object.keys(shoppingCart)[0]) {
-				dispatch(updateCart(totalItems(shoppingCart), totalPrice(shoppingCart)));
-			}
+			dispatch(updateCart(totalItems(shoppingCart), totalPrice(shoppingCart)));
 		},
 		[ shoppingCart, dispatch ]
 	);
 	return (
 		<div className="App">
 			<header className="App-header">
-				<h1>Shoply</h1>
+				<a href="/">
+					<h1>Shoply</h1>
+				</a>
 				<p>
-					cart: {items} total: ${total}
+					<a href="/cart">cart</a>: {items} total: ${total}
 				</p>
 			</header>
 			<Routes />
