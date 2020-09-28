@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##Shoply
+
+A simple shopping-cart app.  Created to practice using redux, react, and local storage.  
+
 ## Available Scripts
 
 In the project directory, you can run:
