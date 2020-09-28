@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import ItemsList from "./ItemsList";
 import { totalItems, totalPrice } from "./helpers";
 import { updateCart } from "./actions";
 import { useSelector, useDispatch } from "react-redux";
+import Routes from "./Routes";
 
 function App() {
 	const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function App() {
 					cart: {items} total: ${total}
 				</p>
 			</header>
-			<ItemsList />
+			<Routes />
 		</div>
 	);
 }

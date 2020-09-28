@@ -7,9 +7,9 @@ export const add = (id, qty, price) => ({
 	price
 });
 
-export const remove = (item) => ({
+export const remove = (id) => ({
 	type: REMOVE_ITEM,
-	item
+	id
 });
 
 export const updateCart = (items, total) => ({

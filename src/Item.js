@@ -21,7 +21,7 @@ const Item = ({ itm, id }) => {
 	return (
 		<li className="Item">
 			<img src={itm.image_url} alt="item" />
-			<a href="#">
+			<a href={id}>
 				<h2>{itm.name}</h2>
 			</a>
 			<p>{itm.price}</p>
