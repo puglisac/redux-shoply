@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+import ItemsList from "./ItemsList";
+import { totalItems, totalPrice } from "./helpers";
+import { updateCart } from "./actions";
+import { useSelector, useDispatch } from "react-redux";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const dispatch = useDispatch();
+	const { items, total } = useSelector((st) => st.total);
+	const shoppingCart = useSelector((st) => st.shoppingCart);
+
+	useEffect(
+		() => {
+			if (Object.keys(shoppingCart)[0]) {
+				dispatch(updateCart(totalItems(shoppingCart), totalPrice(shoppingCart)));
+			}
+		},
+		[ shoppingCart, dispatch ]
+	);
+	return (
+		<div className="App">
+			<header className="App-header">
+				<h1>Shoply</h1>
+				<p>
+					cart: {items} total: ${total}
+				</p>
+			</header>
+			<ItemsList />
+		</div>
+	);
 }
 
 export default App;

@@ -1,0 +1,16 @@
+.Item img {
+	height: 200px;
+}
+li {
+	list-style: none;
+}
+.Item {
+	margin: 20px;
+}
+.Item a {
+	text-decoration: none;
+	color: black;
+}
+.Item a:hover {
+	color: blue;
+}
